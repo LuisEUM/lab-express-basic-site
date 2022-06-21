@@ -20,17 +20,25 @@ app.get('/about',(req, res, next)=>{
     res.sendFile(`${__dirname}/views/about.html`)
 })
 
-app.get("/posts/:id", (req, res, next)=>{
-    console.log(req.params)
-    const id = req.params.id
-    res.send(`welcome to post route: ${id}`)
+app.get('/works',(req,res,next)=>{
+    res.sendFile(`${__dirname}/views/works.html`)
 })
 
-app.get("/search", (req, res, next)=>{
-    console.log(req.query)
-    const id = req.query.id
-    res.send(`welcome to post route: ${id}`)
+app.get('/photo_gallery', (req, res, next) => {
+    res.sendFile(`${__dirname}/views/photo_gallery.html`)
 })
 
+// Codigo de apuntes de la clase con julio 
+// app.get("/posts/:id", (req, res, next)=>{
+//     console.log(req.params)
+//     const id = req.params.id
+//     res.send(`welcome to post route: ${id}`)
+// })
+
+// app.get("/search", (req, res, next)=>{
+//     console.log(req.query)
+//     const id = req.query.id
+//     res.send(`welcome to post route: ${id}`)
+// })
 
 app.listen(port, () => console.log(`This is working at the port: ${port}`))
